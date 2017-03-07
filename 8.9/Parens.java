@@ -1,43 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package pkg8.pkg9.parens;
-
-/**
- *
- * @author David
- */
 public class Parens {
     static int total;
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         // TODO code application logic here
-        recurse(4, 0, "");
-        System.out.println(total);
+        if (args.length != 1) {
+            System.out.println("Usage: java Parentheses -n\nwhere n is number of elements");
+        }
+        total = 0;
+        int n = Integer.parseInt(args[0]);
+        recurse(n, 0, "");
         
-//        double last = 1;
-//        for (int i = 1; i < 20; i++) {
-//            total = 0;
-//            double start = System.nanoTime();
-//            recurse(i, 0, "");
-//            double difference = (System.nanoTime() - start);
-//            
-//            System.out.println(difference / last);
-//            last = difference;
-//            //System.out.println();
-//            //System.out.println("Number " + i + ": " + total);
-//        }
+        //Total number of parentheses combinations
+        System.out.println(total);
         
     }
     
+    // opensToGo starts as the number of parentheses to use
+    // numOpened refers to the number of brackets that have been opened but not closed
     static void recurse(int opensToGo, int numOpened, String s){
+        //If N parentheses have been opened
         if (opensToGo == 0){
             if(numOpened == 0){
-                //System.out.print(s + ", ");
+                System.out.print(s + ", ");
                 total++;
             } else {
                 recurse(opensToGo, numOpened-1, s + ")");
