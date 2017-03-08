@@ -3,11 +3,23 @@
 //fix README
 //learn unit tests
 
+    /*
+     * 8.9 Parens: Implement an algorithm to print all valid 
+     * (e.g., properly opened and closed) combinations of n pairs of parentheses.
+    
+     * EXAMPLE
+     * Input: 3
+     * Output: ((())), (()()), (())(), ()(()), ()()()
+     */
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
 
-public class Parentheses {
+public class Q9_Parens_2 {
+    
+    
+    
   public static void main (String[] args) {
     if (args.length != 1) {
       System.out.println("Usage: java Parentheses -n\nwhere n is number of elements");
