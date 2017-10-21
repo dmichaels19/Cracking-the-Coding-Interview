@@ -14,8 +14,8 @@ def print_Y(N):
 
     rows = 0
     for i in range(N/2, 0, -1):
-        print " "*(N/2-i) + "*" + " "*(i*2 - 1) + "*" + " "*(N-i)
+        print(" "*(N/2-i) + "*" + " "*(i*2 - 1) + "*" + " "*(N-i))
     for i in range(N/2):
-        print " "*(N/2) + "*" + " "*(N/2)
+        print(" "*(N/2) + "*" + " "*(N/2))
 
 print_Y(20)
