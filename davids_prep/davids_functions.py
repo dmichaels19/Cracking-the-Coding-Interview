@@ -16,3 +16,4 @@ def new_range_list(first, second=None, increment=1):
     return [i for i in new_range_iter(first,second,increment)]
 
 print(new_range_list(10))
+
