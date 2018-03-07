@@ -1,6 +1,7 @@
 import Data.Char (toLower)
 import Data.List (sort)
 
+isPermutation :: [Char] -> Bool
 isPermutation = allPairsButOne . sort . stringToLower . removeWhitespace
 
 allPairsButOne xs = allPairsButOne' xs False
@@ -17,3 +18,6 @@ allPairsButOne xs = allPairsButOne' xs False
 stringToLower = map toLower
 
 removeWhitespace = filter (\x -> x /= ' ')
+
+
+-- isPermutation = allPairsButOne . sort . stringToLower . removeWhitespace
