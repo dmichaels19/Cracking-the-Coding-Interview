@@ -16,16 +16,20 @@ def list_of_depths(tree):
     find_depths(tree, 0, DepthsList)
 
 def find_depths(tree, height, DepthsList):
+    # When we go beyond the leaves
     if tree is None:
         return
 
+    # In the case that we haven't visited this height yet, create a list that will hold 
+    #   elements at this height
     if len(DepthsList) <= height:
-        DepthsList.append([tree.value])
-    else:
-        DepthsList[height].append(tree.value)
-
-    recurse(tree.left, height+1, DepthsList)
+        DepthsList.append(list())
+    
+    DepthsList[height].append(tree.value)
+    
+    # Do a depth-first traversal on the left and right side
     recurse(tree.left, height + 1, DepthsList)
+    recurse(tree.right, height + 1, DepthsList)
 
 
 
